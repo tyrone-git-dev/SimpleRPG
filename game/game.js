@@ -2224,12 +2224,12 @@ bloodBoil.desc = "You become filled with anger, increasing your atk, and spd, bu
 bloodBoil.atkMessage = "Something about the enemy makes your blood boil. You become angry!";
 //console.log(bloodBoil);
 
-// kamikazeeBlow skill
-var kamikazeeBlow = new Skill("KamikazeeBlow", "active");
-kamikazeeBlow.mpCost = 75;
-kamikazeeBlow.desc = "You charge your enemy by recklessly bodyslamming them, weapon in hand. You also take damage from the enemy. (MP: " + kamikazeeBlow.mpCost + ")";
-kamikazeeBlow.atkMessage = "You recklessly slam into the enemy dealing ";
-//console.log(kamikazeeBlow);
+// kamikazeeStrike skill
+var kamikazeeStrike = new Skill("kamikazeeStrike", "active");
+kamikazeeStrike.mpCost = 75;
+kamikazeeStrike.desc = "You charge your enemy by recklessly bodyslamming them, weapon in hand. You also take damage from the enemy. (MP: " + kamikazeeStrike.mpCost + ")";
+kamikazeeStrike.atkMessage = "You recklessly slam into the enemy dealing ";
+//console.log(kamikazeeStrike);
 
 // Boss' Pupil
 var bossPupil = new Skill("Boss' Pupil (+atk, +MP)", "passive");
@@ -2269,8 +2269,8 @@ function maniacSkillSet(player) {
 	bloodBoil.incStat[1] = 10 * Math.floor(player.level/10);
 	bloodBoil.decStat[0] = 8 * Math.floor(player.level/10);
 	
-	// kamikazeeBlow
-	kamikazeeBlow.damage = Math.floor((player.atk/3) + Math.round(player.atk * 1.8));
+	// kamikazeeStrike
+	kamikazeeStrike.damage = Math.floor((player.atk/3) + Math.round(player.atk * 1.8));
 	
 	// summonGrunt
 	summonGrunt.damage = Math.floor(Math.random() * (summonGrunt.atk/4)) + Math.round(summonGrunt.atk * 1.3);
@@ -2323,15 +2323,15 @@ function maniacSkillSet(player) {
 		bloodBoil.skillActivated = true;
 	} // end bloodBoil
 	
-	// unlock kamikazeeBlow skill
-	if (player.level >= 20 && kamikazeeBlow.skillActivated == false) { 
-		combatInfo.innerHTML += "<br>Skill Unlocked: " + kamikazeeBlow.skillName;
-		//console.log(kamikazeeBlow);
-		player.skillSet.push(kamikazeeBlow);
+	// unlock kamikazeeStrike skill
+	if (player.level >= 20 && kamikazeeStrike.skillActivated == false) { 
+		combatInfo.innerHTML += "<br>Skill Unlocked: " + kamikazeeStrike.skillName;
+		//console.log(kamikazeeStrike);
+		player.skillSet.push(kamikazeeStrike);
 		//console.log("player.skillSet: " + player.skillSet + player.skillSet.length);
-		//console.log(kamikazeeBlow.skillActivated);
-		kamikazeeBlow.skillActivated = true;
-	} // end kamikazeeBlow
+		//console.log(kamikazeeStrike.skillActivated);
+		kamikazeeStrike.skillActivated = true;
+	} // end kamikazeeStrike
 	
 	// unlock bossPupil
 	if (player.level >= 23 && bossPupil.skillActivated == false) { 
@@ -3921,7 +3921,7 @@ function cavalierSkillSet(player) {
 
 function activeSkills(Skill) {
 	// maniac
-	if (Skill.skillName == "KamikazeeBlow") {
+	if (Skill.skillName == "kamikazeeStrike") {
 		let returnDamage = Math.floor(player.level * 5.18);
 		player.hp -= returnDamage;
 		console.log("returnDamage: " + returnDamage);
