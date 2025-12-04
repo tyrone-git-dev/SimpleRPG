@@ -84,8 +84,8 @@ document.body.innerHTML +=
   + "<li role=\"presentation\"><a href=\"log.html\" target=\"_blank\">Log</a></li>"
   + "<li role=\"presentation\"><a href=\"game/index.html\" target=\"_blank\">Game (v0.5)</a></li>"
   + "<li role=\"presentation\"><a href=\"index-demo.html\" target=\"_blank\">DEMO</a></li>"
+  + "<li role=\"presentation\"><a href=\"hallofworship.html\" target=\"_blank\">Hall of Worship</a></li>"
   + "<li role=\"presentation\"><a href=\"hallofunholymages.html\" target=\"_blank\">Hall of Unholy Mages</a></li>"
-  + "<li role=\"presentation\"><a href=\"hallofworship.html\" target=\"_blank\">Hall of Worship</a></li>"		
 +"</ul>"
 
 + "<!-- Left side of the screen -->"
@@ -4925,3 +4925,4 @@ function transformSkills() {
 }
 
 // Gravity II
+
